@@ -63,15 +63,15 @@ export default function PrivacyPolicy() {
               <li>
                 <strong>Data Lain:</strong> Setiap komunikasi yang Anda lakukan dengan Kami: misalnya jika Anda mengirim email dukungan, memberi masukan, atau berpartisipasi dalam survei/kuis yang Kami adakan, Kami dapat menyimpan informasi tersebut dan kontak Anda.
               </li>
+              <li>
+                <strong>Catatan penting:</strong>
+                <ul className="list-disc pl-6 space-y-1">
+                  <li>FinPath tidak mengumpulkan data lokasi (GPS) dan tidak melakukan sinkronisasi bank pada versi saat ini.</li>
+                  <li>FinPath tidak menggunakan layanan analytics pihak ketiga untuk pelacakan perilaku pengguna.</li>
+                  <li>Kami tidak mengumpulkan atau meminta kategori Data Pribadi sensitif yang tidak relevan dengan FinPath, seperti data biometrik, data kesehatan, data kartu kredit (pembayaran ditangani oleh Google), atau informasi pribadi sensitif lainnya, kecuali jika Anda sendiri memasukkannya ke dalam catatan transaksi (misal Anda menulis catatan yang mengandung informasi pribadi).</li>
+                </ul>
+              </li>
             </ul>
-            <div className="bg-gray-50 p-4 rounded-lg mt-4 text-sm">
-              <p className="font-semibold mb-2">Catatan penting:</p>
-              <ul className="list-disc pl-6 space-y-1">
-                <li>FinPath tidak mengumpulkan data lokasi (GPS) dan tidak melakukan sinkronisasi bank pada versi saat ini.</li>
-                <li>FinPath tidak menggunakan layanan analytics pihak ketiga untuk pelacakan perilaku pengguna.</li>
-                <li>Kami tidak mengumpulkan atau meminta kategori Data Pribadi sensitif yang tidak relevan dengan FinPath, seperti data biometrik, data kesehatan, data kartu kredit (pembayaran ditangani oleh Google), atau informasi pribadi sensitif lainnya, kecuali jika Anda sendiri memasukkannya ke dalam catatan transaksi (misal Anda menulis catatan yang mengandung informasi pribadi).</li>
-              </ul>
-            </div>
           </section>
 
           <section>
@@ -143,19 +143,15 @@ export default function PrivacyPolicy() {
             <ul className="list-disc pl-6 space-y-2 mb-4">
               <li><strong>Lokasi Penyimpanan Data:</strong> Data Pribadi Anda disimpan pada infrastruktur penyedia hosting/cloud yang digunakan FinPath (misalnya layanan hosting aplikasi dan database). Lokasi server dapat berada di Indonesia atau di luar Indonesia, tergantung lokasi pusat data yang dipilih/tersedia dari penyedia tersebut. Apabila terjadi penyimpanan atau pemrosesan lintas negara, Kami akan mengambil langkah yang wajar untuk memastikan perlindungan yang memadai sesuai ketentuan peraturan perlindungan data yang berlaku di Indonesia.</li>
               <li><strong>Keamanan Data:</strong> Kami menerapkan langkah-langkah keamanan yang wajar untuk melindungi Data Pribadi Anda dari akses, penggunaan, perubahan, atau pengungkapan tanpa izin. Langkah ini dapat mencakup, antara lain: (i) pengamanan komunikasi data antara perangkat Anda dan server; (ii) pembatasan akses internal hanya kepada pihak yang memerlukan untuk operasional; dan (iii) pengamanan kredensial akun, termasuk penyimpanan kata sandi dalam bentuk yang tidak dapat dibaca (misalnya melalui metode hashing).</li>
+              <li><strong>Keamanan & Peran Pengguna:</strong> Kami menerapkan langkah-langkah keamanan yang wajar untuk melindungi Data Pribadi Anda. Namun, tidak ada metode transmisi melalui internet atau penyimpanan elektronik yang dapat dijamin 100% aman. Anda bertanggung jawab menjaga keamanan akun Anda, antara lain dengan:
+                <ul className="list-disc pl-6 space-y-1 mb-4">
+                  <li>menjaga kerahasiaan kata sandi dan menggunakan kata sandi yang kuat;</li>
+                  <li>selalu memperbarui aplikasi ke versi terbaru; dan</li>
+                  <li> waspada terhadap penipuan/phishing (Kami tidak pernah meminta kata sandi Anda melalui email atau pesan).</li>
+                </ul>
+              </li>
+              <li><strong>Pemberitahuan Insiden Keamanan (Data Breach):</strong> Apabila terjadi insiden kegagalan pelindungan Data Pribadi yang berdampak pada Anda, Kami akan melakukan pemberitahuan sesuai ketentuan peraturan perundang-undangan yang berlaku, termasuk kewajiban pemberitahuan paling lambat 3×24 jam sejak insiden diketahui, dan memuat informasi minimum yang dipersyaratkan.</li>
             </ul>
-            <div className="bg-gray-50 p-4 rounded-lg text-sm mb-4">
-              <p className="font-semibold mb-2">Keamanan & Peran Pengguna</p>
-              <p className="mb-2">Kami menerapkan langkah-langkah keamanan yang wajar untuk melindungi Data Pribadi Anda. Namun, tidak ada metode transmisi melalui internet atau penyimpanan elektronik yang dapat dijamin 100% aman. Anda bertanggung jawab menjaga keamanan akun Anda, antara lain dengan:</p>
-              <ul className="list-disc pl-6 space-y-1">
-                <li>menjaga kerahasiaan kata sandi dan menggunakan kata sandi yang kuat;</li>
-                <li>selalu memperbarui aplikasi ke versi terbaru; dan</li>
-                <li>waspada terhadap penipuan/phishing (Kami tidak pernah meminta kata sandi Anda melalui email atau pesan).</li>
-              </ul>
-            </div>
-            <p>
-              <strong>Pemberitahuan Insiden Keamanan (Data Breach):</strong> Apabila terjadi insiden kegagalan pelindungan Data Pribadi yang berdampak pada Anda, Kami akan melakukan pemberitahuan sesuai ketentuan peraturan perundang-undangan yang berlaku, termasuk kewajiban pemberitahuan paling lambat 3×24 jam sejak insiden diketahui, dan memuat informasi minimum yang dipersyaratkan.
-            </p>
           </section>
 
           <section>
