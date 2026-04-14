@@ -19,13 +19,24 @@ export const metadata: Metadata = {
   openGraph: {
     title: "FinPath - Manage Your Finances Smarter with AI",
     description: "Kelola keuangan lebih pintar dengan AI. Dapatkan rekomendasi personal, lacak transaksi otomatis.",
+    url: "https://www.finpathapp.com",
+    siteName: "FinPath",
     type: "website",
     locale: "id_ID",
+    images: [
+      {
+        url: "/images/FinPath_Logo.jpg", // Gambar yang akan muncul di WhatsApp/Telegram
+        width: 800,
+        height: 800,
+        alt: "FinPath Logo",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "FinPath - Manage Your Finances Smarter with AI",
     description: "Dapatkan kebebasan finansial melalui insight AI real-time bersama FinPath.",
+    images: ["/finpath-home.png"], // Gambar banner untuk Twitter
   },
 };
 
