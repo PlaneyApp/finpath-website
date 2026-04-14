@@ -109,8 +109,12 @@ export default function Testimonials() {
   };
 
   return (
-    <section id="testimonials" className="section-padding bg-white overflow-hidden">
-      <div className="section-container">
+    <section id="testimonials" className="section-padding bg-neutral-50 dark:bg-neutral-950 overflow-hidden relative transition-colors duration-300">
+      {/* Background Orbs */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-primary-100 dark:bg-primary-600/10 blur-[100px] rounded-full"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary-100 dark:bg-secondary-600/10 blur-[100px] rounded-full"></div>
+
+      <div className="section-container relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -119,16 +123,16 @@ export default function Testimonials() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center space-x-2 bg-accent-50 px-4 py-2 rounded-full mb-4">
-            <span className="text-sm font-semibold text-accent-600">
+          <div className="inline-flex items-center space-x-2 bg-white dark:bg-white/5 border border-neutral-200 dark:border-white/10 px-4 py-2 rounded-full mb-4 shadow-sm">
+            <span className="text-sm font-semibold text-accent-600 dark:text-accent-400 uppercase tracking-widest">
               Testimonials
             </span>
           </div>
-          <h2 className="heading-2 mb-4">
+          <h2 className="heading-2 mb-4 text-neutral-900 dark:text-white">
             Dipercaya oleh{' '}
             <span className="gradient-text">Ribuan Pengguna</span>
           </h2>
-          <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+          <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto font-light">
             Lihat bagaimana FinPath membantu users mencapai tujuan finansial
             mereka dengan bantuan AI
           </p>
@@ -139,18 +143,18 @@ export default function Testimonials() {
           {/* Navigation Buttons */}
           <button
             onClick={handlePrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-20 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-primary-50 transition-colors"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-20 w-12 h-12 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-white/10 rounded-full shadow-md dark:shadow-[0_0_20px_rgba(0,0,0,0.5)] flex items-center justify-center hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors"
             aria-label="Previous testimonials"
           >
-            <ChevronLeft className="w-6 h-6 text-primary-600" />
+            <ChevronLeft className="w-6 h-6 text-primary-600 dark:text-primary-400" />
           </button>
 
           <button
             onClick={handleNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-20 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-primary-50 transition-colors"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-20 w-12 h-12 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-white/10 rounded-full shadow-md dark:shadow-[0_0_20px_rgba(0,0,0,0.5)] flex items-center justify-center hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors"
             aria-label="Next testimonials"
           >
-            <ChevronRight className="w-6 h-6 text-primary-600" />
+            <ChevronRight className="w-6 h-6 text-primary-600 dark:text-primary-400" />
           </button>
 
           {/* Desktop View - 3 Cards */}
@@ -167,14 +171,14 @@ export default function Testimonials() {
                   x: { type: "spring", stiffness: 300, damping: 30 },
                   opacity: { duration: 0.2 },
                 }}
-                className="grid grid-cols-1 md:grid-cols-3 gap-6"
+                className="grid grid-cols-1 md:grid-cols-3 gap-6 py-4"
               >
                 {getVisibleTestimonials().map((testimonial, index) => (
                   <div key={`${testimonial.name}-${index}`}>
-                    <div className="card h-full relative overflow-hidden">
+                    <div className="card h-full relative overflow-hidden bg-white dark:bg-neutral-900/60 backdrop-blur-md border border-neutral-200 dark:border-white/5 hover:border-primary-200 dark:hover:border-white/20 transition-all shadow-lg dark:shadow-xl group">
                       {/* Quote Icon */}
-                      <div className="absolute top-4 right-4 opacity-10">
-                        <Quote className="w-12 h-12 text-primary-600" />
+                      <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <Quote className="w-12 h-12 text-primary-500" />
                       </div>
 
                       {/* Rating */}
@@ -182,28 +186,28 @@ export default function Testimonials() {
                         {[...Array(testimonial.rating)].map((_, i) => (
                           <Star
                             key={i}
-                            className="w-5 h-5 fill-yellow-400 text-yellow-400"
+                            className="w-4 h-4 fill-amber-400 text-amber-400 drop-shadow-[0_0_5px_rgba(251,191,36,0.3)] dark:drop-shadow-[0_0_5px_rgba(251,191,36,0.6)]"
                           />
                         ))}
                       </div>
 
                       {/* Testimonial Text */}
-                      <p className="text-neutral-700 mb-6 leading-relaxed relative z-10 min-h-[120px]">
-                        {testimonial.text}
+                      <p className="text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed relative z-10 min-h-[120px] font-light">
+                        "{testimonial.text}"
                       </p>
 
                       {/* User Info */}
-                      <div className="flex items-center space-x-3 pt-4 border-t border-neutral-100">
-                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center flex-shrink-0">
-                          <span className="text-white font-bold">
+                      <div className="flex items-center space-x-3 pt-4 border-t border-neutral-100 dark:border-white/10">
+                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center flex-shrink-0 shadow-lg">
+                          <span className="text-white font-bold text-sm">
                             {testimonial.avatar}
                           </span>
                         </div>
                         <div>
-                          <h4 className="font-semibold text-neutral-900">
+                          <h4 className="font-semibold text-neutral-900 dark:text-white">
                             {testimonial.name}
                           </h4>
-                          <p className="text-sm text-neutral-500">
+                          <p className="text-xs text-neutral-500 dark:text-neutral-400">
                             {testimonial.role}
                           </p>
                         </div>
@@ -211,7 +215,7 @@ export default function Testimonials() {
 
                       {/* Highlight Badge */}
                       <div className="absolute bottom-4 right-4">
-                        <div className="bg-secondary-50 text-secondary-700 text-xs font-semibold px-3 py-1 rounded-full">
+                        <div className="bg-primary-500/10 border border-primary-500/30 text-primary-400 text-[10px] uppercase font-black tracking-widest px-3 py-1 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.2)]">
                           {testimonial.highlight}
                         </div>
                       </div>
@@ -223,7 +227,7 @@ export default function Testimonials() {
           </div>
 
           {/* Mobile View - 1 Card */}
-          <div className="md:hidden">
+          <div className="md:hidden py-4">
             <AnimatePresence initial={false} custom={direction} mode="wait">
               <motion.div
                 key={currentIndex}
@@ -237,10 +241,10 @@ export default function Testimonials() {
                   opacity: { duration: 0.2 },
                 }}
               >
-                <div className="card relative overflow-hidden">
+                <div className="card relative overflow-hidden bg-white dark:bg-neutral-900/60 backdrop-blur-md border border-neutral-200 dark:border-white/5 shadow-lg">
                   {/* Quote Icon */}
                   <div className="absolute top-4 right-4 opacity-10">
-                    <Quote className="w-12 h-12 text-primary-600" />
+                    <Quote className="w-12 h-12 text-primary-500" />
                   </div>
 
                   {/* Rating */}
@@ -248,28 +252,28 @@ export default function Testimonials() {
                     {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
                       <Star
                         key={i}
-                        className="w-5 h-5 fill-yellow-400 text-yellow-400"
+                        className="w-5 h-5 fill-amber-400 text-amber-400 drop-shadow-[0_0_5px_rgba(251,191,36,0.3)] dark:drop-shadow-[0_0_5px_rgba(251,191,36,0.6)]"
                       />
                     ))}
                   </div>
 
                   {/* Testimonial Text */}
-                  <p className="text-neutral-700 mb-6 leading-relaxed relative z-10">
-                    {testimonials[currentIndex].text}
+                  <p className="text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed relative z-10 font-light">
+                    "{testimonials[currentIndex].text}"
                   </p>
 
                   {/* User Info */}
-                  <div className="flex items-center space-x-3 pt-4 border-t border-neutral-100">
+                  <div className="flex items-center space-x-3 pt-4 border-t border-neutral-100 dark:border-white/10">
                     <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center flex-shrink-0">
                       <span className="text-white font-bold">
                         {testimonials[currentIndex].avatar}
                       </span>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-neutral-900">
+                      <h4 className="font-semibold text-neutral-900 dark:text-white">
                         {testimonials[currentIndex].name}
                       </h4>
-                      <p className="text-sm text-neutral-500">
+                      <p className="text-sm text-neutral-500 dark:text-neutral-400">
                         {testimonials[currentIndex].role}
                       </p>
                     </div>
@@ -277,7 +281,7 @@ export default function Testimonials() {
 
                   {/* Highlight Badge */}
                   <div className="absolute bottom-4 right-4">
-                    <div className="bg-secondary-50 text-secondary-700 text-xs font-semibold px-3 py-1 rounded-full">
+                    <div className="bg-primary-500/10 border border-primary-500/30 text-primary-600 dark:text-primary-400 text-xs font-semibold px-3 py-1 rounded-full uppercase">
                       {testimonials[currentIndex].highlight}
                     </div>
                   </div>
@@ -292,10 +296,10 @@ export default function Testimonials() {
               <button
                 key={index}
                 onClick={() => handleDotClick(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                className={`h-2 rounded-full transition-all duration-500 ${
                   index === currentIndex
-                    ? 'bg-primary-600 w-8'
-                    : 'bg-neutral-300 hover:bg-primary-400'
+                    ? 'bg-primary-500 w-8 shadow-[0_0_10px_#3b82f6]'
+                    : 'bg-neutral-300 dark:bg-neutral-700 w-2 hover:bg-neutral-400 dark:hover:bg-neutral-500'
                 }`}
                 aria-label={`Go to testimonial ${index + 1}`}
               />
@@ -305,24 +309,27 @@ export default function Testimonials() {
 
         {/* Stats Bar */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mt-16 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-2xl p-8 lg:p-12"
+          className="mt-20 relative overflow-hidden rounded-3xl shadow-xl dark:shadow-none"
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center text-white">
-            <div>
-              <div className="text-4xl lg:text-5xl font-bold mb-2">10K+</div>
-              <div className="text-primary-100">Active Users</div>
-            </div>
-            <div>
-              <div className="text-4xl lg:text-5xl font-bold mb-2">98%</div>
-              <div className="text-primary-100">Satisfaction Rate</div>
-            </div>
-            <div>
-              <div className="text-4xl lg:text-5xl font-bold mb-2">Rp 50M+</div>
-              <div className="text-primary-100">Total Savings Tracked</div>
+          <div className="absolute inset-0 bg-gradient-to-r from-primary-50 to-secondary-50 dark:from-primary-900/60 dark:to-secondary-900/60 backdrop-blur-xl border border-neutral-200 dark:border-white/10 z-0"></div>
+          <div className="relative z-10 p-8 lg:p-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              <div>
+                <div className="text-4xl lg:text-5xl font-black mb-2 text-neutral-900 dark:text-white drop-shadow-none dark:drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">10K+</div>
+                <div className="text-primary-600 dark:text-primary-300 font-medium tracking-wide uppercase text-sm">Active Users</div>
+              </div>
+              <div>
+                <div className="text-4xl lg:text-5xl font-black mb-2 text-neutral-900 dark:text-white drop-shadow-none dark:drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">98%</div>
+                <div className="text-secondary-600 dark:text-secondary-300 font-medium tracking-wide uppercase text-sm">Satisfaction Rate</div>
+              </div>
+              <div>
+                <div className="text-4xl lg:text-5xl font-black mb-2 text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-emerald-500 dark:from-green-400 dark:to-emerald-400 drop-shadow-none dark:drop-shadow-[0_0_15px_rgba(52,211,153,0.3)]">Rp 50M+</div>
+                <div className="text-emerald-600 dark:text-emerald-500 font-medium tracking-wide uppercase text-sm">Total Savings Tracked</div>
+              </div>
             </div>
           </div>
         </motion.div>

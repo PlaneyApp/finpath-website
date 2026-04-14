@@ -1,29 +1,30 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Providers } from "./providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "FinPath - Your AI-Powered Personal Finance Companion",
-  description: "Kelola keuangan lebih pintar dengan AI. Dapatkan rekomendasi keuangan personal, lacak transaksi, dan capai tujuan finansialmu dengan FinPath.",
-  keywords: ["personal finance", "AI finance", "budget management", "financial tracking", "AI insights", "money management"],
-  authors: [{ name: "FinPath" }],
+  title: "FinPath - Manage Your Finances Smarter with AI",
+  description: "Kelola keuangan lebih pintar dengan AI. Dapatkan rekomendasi personal, lacak transaksi otomatis, dan wujudkan tujuan finansialmu dengan mudah dan cerdas.",
+  keywords: ["personal finance", "AI finance", "budget management", "financial tracking", "AI insights", "money management", "FinPath"],
+  authors: [{ name: "FinPath Team" }],
   icons: {
     icon: '/icon.ico',
     shortcut: '/icon.ico',
     apple: '/icon.ico',
   },
   openGraph: {
-    title: "FinPath - Your AI-Powered Personal Finance Companion",
-    description: "Kelola keuangan lebih pintar dengan AI. Dapatkan rekomendasi keuangan personal dari AI.",
+    title: "FinPath - Manage Your Finances Smarter with AI",
+    description: "Kelola keuangan lebih pintar dengan AI. Dapatkan rekomendasi personal, lacak transaksi otomatis.",
     type: "website",
     locale: "id_ID",
   },
   twitter: {
     card: "summary_large_image",
-    title: "FinPath - Your AI-Powered Personal Finance Companion",
-    description: "Kelola keuangan lebih pintar dengan AI. Dapatkan rekomendasi keuangan personal dari AI.",
+    title: "FinPath - Manage Your Finances Smarter with AI",
+    description: "Dapatkan kebebasan finansial melalui insight AI real-time bersama FinPath.",
   },
 };
 
@@ -33,8 +34,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="id">
-      <body className={inter.className}>{children}</body>
+    <html lang="id" suppressHydrationWarning>
+      <body className={inter.className}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }

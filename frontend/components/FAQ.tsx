@@ -55,8 +55,11 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="section-padding bg-gradient-to-b from-white to-neutral-50">
-      <div className="section-container">
+    <section id="faq" className="section-padding bg-neutral-50 dark:bg-neutral-950 relative overflow-hidden transition-colors duration-300">
+      {/* Background accents */}
+      <div className="absolute top-40 left-0 w-[500px] h-[500px] bg-secondary-100 dark:bg-secondary-900/10 blur-[100px] rounded-full"></div>
+
+      <div className="section-container relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -65,15 +68,15 @@ export default function FAQ() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center space-x-2 bg-primary-50 px-4 py-2 rounded-full mb-4">
-            <span className="text-sm font-semibold text-primary-600">FAQ</span>
+          <div className="inline-flex items-center space-x-2 bg-white dark:bg-white/5 border border-neutral-200 dark:border-white/10 px-4 py-2 rounded-full mb-4 shadow-sm">
+            <span className="text-sm font-semibold text-primary-600 dark:text-primary-400 uppercase tracking-widest">FAQ</span>
           </div>
-          <h2 className="heading-2 mb-4">
+          <h2 className="heading-2 mb-4 text-neutral-900 dark:text-white">
             Pertanyaan yang{' '}
             <span className="gradient-text">Sering Ditanyakan</span>
           </h2>
-          <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
-            Punya pertanyaan? Kami punya jawabannya!
+          <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto font-light">
+            Punya pertanyaan seputar AI dan cara kerjanya? Kami punya jawabannya!
           </p>
         </motion.div>
 
@@ -88,19 +91,23 @@ export default function FAQ() {
               transition={{ duration: 0.5, delay: index * 0.05 }}
               className="mb-4"
             >
-              <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              <div className="bg-white dark:bg-neutral-900/40 backdrop-blur-md rounded-2xl border border-neutral-200 dark:border-white/5 overflow-hidden transition-all duration-300 hover:border-primary-200 dark:hover:border-white/10 shadow-sm dark:shadow-none">
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-neutral-50 transition-colors"
+                  className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-neutral-50 dark:hover:bg-white/5 transition-colors"
                 >
-                  <span className="font-semibold text-neutral-900 pr-8">
+                  <span className={`font-medium ${openIndex === index ? 'text-primary-700 dark:text-white' : 'text-neutral-700 dark:text-neutral-300'} pr-8 transition-colors`}>
                     {faq.question}
                   </span>
                   <div className="flex-shrink-0">
                     {openIndex === index ? (
-                      <Minus className="w-5 h-5 text-primary-600" />
+                      <div className="w-8 h-8 rounded-full bg-primary-100 dark:bg-primary-500/20 flex items-center justify-center border border-primary-200 dark:border-primary-500/30">
+                         <Minus className="w-4 h-4 text-primary-600 dark:text-primary-400" />
+                      </div>
                     ) : (
-                      <Plus className="w-5 h-5 text-neutral-400" />
+                      <div className="w-8 h-8 rounded-full bg-neutral-100 dark:bg-white/5 flex items-center justify-center border border-neutral-200 dark:border-white/10">
+                         <Plus className="w-4 h-4 text-neutral-500 dark:text-neutral-400" />
+                      </div>
                     )}
                   </div>
                 </button>
@@ -112,9 +119,9 @@ export default function FAQ() {
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3 }}
-                      className="overflow-hidden"
+                      className="overflow-hidden bg-neutral-50/50 dark:bg-white/[0.02]"
                     >
-                      <div className="px-6 pb-5 text-neutral-600 leading-relaxed">
+                      <div className="px-6 pb-6 pt-2 text-neutral-600 dark:text-neutral-400 leading-relaxed font-light">
                         {faq.answer}
                       </div>
                     </motion.div>
@@ -133,10 +140,10 @@ export default function FAQ() {
           transition={{ duration: 0.6 }}
           className="text-center mt-12"
         >
-          <p className="text-neutral-600 mb-4">
+          <p className="text-neutral-600 dark:text-neutral-400 mb-6 font-light">
             Tidak menemukan jawaban yang Anda cari?
           </p>
-          <button className="btn-secondary">Hubungi Kami</button>
+          <button className="btn-secondary dark:border-white/20 dark:bg-white/5 dark:hover:bg-white/10 text-neutral-800 dark:text-white bg-white hover:bg-neutral-50 shadow-sm border border-neutral-300">Hubungi Support Kami</button>
         </motion.div>
       </div>
     </section>
