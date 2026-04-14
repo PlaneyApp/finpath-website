@@ -53,7 +53,7 @@ export default function Hero() {
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start items-center lg:items-start">
               <motion.a
                 href="https://play.google.com/store/apps/details?id=com.yourcompany.finpath"
                 target="_blank"
