@@ -6,6 +6,7 @@ import { Providers } from "./providers";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.finpathapp.com'),
   title: "FinPath - Manage Your Finances Smarter with AI",
   description: "Kelola keuangan lebih pintar dengan AI. Dapatkan rekomendasi personal, lacak transaksi otomatis, dan wujudkan tujuan finansialmu dengan mudah dan cerdas.",
   keywords: ["personal finance", "AI finance", "budget management", "financial tracking", "AI insights", "money management", "FinPath"],
