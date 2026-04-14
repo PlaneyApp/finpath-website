@@ -94,112 +94,20 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Right Content - Abstract Tech/AI UI Mockup */}
+          {/* Right Content - App Showcase Image */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            className="relative lg:ml-10 mt-12 lg:mt-0"
+            className="relative lg:ml-10 mt-12 lg:mt-0 w-full flex justify-center lg:justify-end"
           >
-            {/* The Main "Glass" Dashboard Frame */}
-            <div className="relative z-10 bg-white/70 dark:bg-neutral-900/60 backdrop-blur-2xl border border-neutral-200 dark:border-white/10 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] p-6 md:p-8 animate-float">
-              
-              {/* Inner Header */}
-              <div className="flex items-center justify-between mb-8 pb-4 border-b border-neutral-200 dark:border-white/10">
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-secondary-600 flex items-center justify-center shadow-lg">
-                    <Sparkles className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-neutral-900 dark:text-white tracking-wide">AI Assistant</h3>
-                    <p className="text-xs text-primary-600 dark:text-primary-400">analyzing finances...</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Mockup Body Elements */}
-              <div className="space-y-6">
-                
-                {/* AI Insight Pill */}
-                <div className="relative group overflow-hidden bg-neutral-50 dark:bg-white/5 border border-neutral-200 dark:border-white/10 rounded-2xl p-5 hover:bg-neutral-100 dark:hover:bg-white/10 transition-colors">
-                  <div className="absolute inset-0 bg-gradient-to-r from-secondary-500/10 to-primary-500/10 dark:from-secondary-500/20 dark:to-primary-500/20 opacity-0 group-hover:opacity-100 transition-opacity blur-xl"></div>
-                  <div className="relative flex items-start space-x-4">
-                    <div className="w-2 h-2 mt-2 bg-secondary-500 dark:bg-secondary-400 rounded-full shadow-[0_0_10px_#a78bfa]"></div>
-                    <div className="flex-1">
-                      <p className="text-sm font-semibold text-neutral-900 dark:text-white mb-1 shadow-sm">
-                        Smart Recommendation
-                      </p>
-                      <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed font-light">
-                        Based on your habits, reducing dining expenses by 20% will save you <span className="text-primary-600 dark:text-primary-400 font-medium">Rp 500K</span> this month.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Simulated Chart Area Component */}
-                <div className="bg-white dark:bg-neutral-950/50 rounded-2xl p-6 border border-neutral-100 dark:border-white/5 shadow-sm">
-                  <div className="flex items-center justify-between mb-6">
-                     <span className="text-sm text-neutral-500 dark:text-neutral-400">Cash Flow Projection</span>
-                     <TrendingUp className="w-4 h-4 text-primary-500 dark:text-primary-400" />
-                  </div>
-                  
-                  {/* Neon Progress Bars */}
-                  <div className="space-y-5">
-                    <div>
-                      <div className="flex justify-between text-xs font-medium text-neutral-600 dark:text-neutral-300 mb-2">
-                        <span>Food & Dining</span>
-                        <span className="text-primary-600 dark:text-primary-400">70%</span>
-                      </div>
-                      <div className="w-full bg-neutral-200 dark:bg-neutral-800 rounded-full h-2.5 overflow-hidden">
-                        <motion.div 
-                          initial={{ width: 0 }}
-                          animate={{ width: '70%' }}
-                          transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
-                          className="bg-gradient-to-r from-primary-500 to-primary-400 h-2.5 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.3)] dark:shadow-[0_0_10px_rgba(59,130,246,0.6)]"
-                        ></motion.div>
-                      </div>
-                    </div>
-                    <div>
-                      <div className="flex justify-between text-xs font-medium text-neutral-600 dark:text-neutral-300 mb-2">
-                        <span>Transportation</span>
-                        <span className="text-secondary-600 dark:text-secondary-400">45%</span>
-                      </div>
-                      <div className="w-full bg-neutral-200 dark:bg-neutral-800 rounded-full h-2.5 overflow-hidden">
-                        <motion.div 
-                          initial={{ width: 0 }}
-                          animate={{ width: '45%' }}
-                          transition={{ duration: 1.5, delay: 0.7, ease: "easeOut" }}
-                          className="bg-gradient-to-r from-secondary-500 to-secondary-400 h-2.5 rounded-full shadow-[0_0_10px_rgba(139,92,246,0.3)] dark:shadow-[0_0_10px_rgba(139,92,246,0.6)]"
-                        ></motion.div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="relative w-full max-w-md animate-float">
+               <img
+                src="/finpath-home.png"
+                alt="FinPath App Preview"
+                className="w-full h-full object-contain drop-shadow-2xl filter dark:brightness-90"
+              />
             </div>
-
-            {/* Small Floating Widgets */}
-            <motion.div
-              animate={{ y: [0, -15, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-6 -right-6 lg:-right-10 bg-white/90 dark:bg-neutral-900/80 backdrop-blur-md border border-neutral-200 dark:border-white/10 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.5)] p-4 z-20"
-            >
-              <div className="flex items-center space-x-3">
-                <div className="w-3 h-3 bg-primary-500 shadow-[0_0_10px_#3b82f6] rounded-full animate-pulse"></div>
-                <span className="text-sm font-semibold text-neutral-900 dark:text-white">+Rp 2.5M Saved</span>
-              </div>
-            </motion.div>
-
-            <motion.div
-              animate={{ y: [0, 15, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute -bottom-6 -left-6 lg:-left-10 bg-gradient-to-br from-secondary-500 to-primary-600 dark:from-secondary-900 dark:to-primary-900 border border-transparent dark:border-white/20 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.2)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.5)] p-4 z-20"
-            >
-              <div className="flex items-center space-x-2">
-                <Sparkles className="w-4 h-4 text-white" />
-                <span className="text-sm font-bold text-white shadow-sm">AI Optimizing...</span>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </div>

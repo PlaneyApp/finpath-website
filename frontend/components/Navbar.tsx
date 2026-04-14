@@ -7,10 +7,10 @@ import Image from 'next/image';
 import { ThemeToggle } from './ThemeToggle';
 
 const navItems = [
-  { name: 'Features', href: '#features' },
-  { name: 'How It Works', href: '#how-it-works' },
-  { name: 'Testimonials', href: '#testimonials' },
-  { name: 'FAQ', href: '#faq' },
+  { name: 'Features', href: '/#features' },
+  { name: 'How It Works', href: '/#how-it-works' },
+  { name: 'Testimonials', href: '/#testimonials' },
+  { name: 'FAQ', href: '/#faq' },
 ];
 
 export default function Navbar() {
@@ -37,7 +37,7 @@ export default function Navbar() {
       <div className="section-container">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center space-x-2 relative group">
+          <a href="/" className="flex items-center space-x-2 relative group">
             <div className="absolute inset-0 bg-primary-500/20 blur-xl rounded-full group-hover:bg-primary-500/40 transition-all duration-300"></div>
             <div className="w-8 h-8 sm:w-10 sm:h-10 relative rounded-lg overflow-hidden border border-neutral-200 dark:border-white/10 z-10 bg-white dark:bg-neutral-900 shadow-sm">
               <Image
